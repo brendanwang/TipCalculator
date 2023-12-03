@@ -29,7 +29,7 @@
             text-align: left;
         }
 
-        input, select, button {
+        input, select, button, checkbox {
             width: 100%;
             padding: 10px;
             margin-bottom: 16px;
@@ -82,6 +82,9 @@
             </select>
         </div>
 
+        <label for="roundTip">Round Tip:</label>
+        <input type="checkbox" id="roundTip">
+
         <button onclick="calculateTip()">Calculate Tip</button>
 
         <h2>Results</h2>
@@ -99,6 +102,17 @@
 
             var totalTip = totalBill * tipPercentage;
             var tipPerPerson = totalTip / numPeople;
+
+            if (document.getElementById("roundTip").checked) {
+                var roundedTip = Math.round(totalTip);
+                var roundedFractionalPart = (roundedTip - Math.floor(roundedTip)).toFixed(2);
+                if (parseFloat(roundedFractionalPart) >= 0.5) {
+                    totalTip = Math.ceil(totalTip);
+                } else {
+                    totalTip = Math.floor(totalTip);
+                }
+                tipPerPerson = totalTip / numPeople;
+            }
 
             document.getElementById("totalTip").textContent = "Total Tip: $" + totalTip.toFixed(2);
             document.getElementById("tipPerPerson").textContent = "Tip Per Person: $" + tipPerPerson.toFixed(2);
