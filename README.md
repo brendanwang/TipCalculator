@@ -14,11 +14,3 @@ A simple web-based tip calculator with a modern and appealing user interface. Th
 1. Open the `index.html` file in a web browser.
 2. Enter the total bill amount, the number of people, and optionally, a custom tip percentage.
 3. Click the "Calculate Tip" button to see the results.
-
-## Customization
-
-Feel free to customize the styles and functionality according to your preferences. You can modify the HTML, CSS, and JavaScript code as needed.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
